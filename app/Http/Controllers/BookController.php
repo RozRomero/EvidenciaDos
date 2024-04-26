@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Books;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
     public function index()
     {
-        $books = Books::all();
+        $books = Book::all();
         $booksObject = $books[0];
         return view('index', ['books' => $books], ['booksObject' => $booksObject]);
     }
@@ -20,7 +20,7 @@ class BookController extends Controller
     public function store (Request $request){
         // dd($request->all());
         
-        $book = new Books;
+        $book = new Book;
         $book -> title = $request -> title;
         $book -> author_name = $request -> author_name;
         $book -> isbn = $request -> isbn;
@@ -31,13 +31,13 @@ class BookController extends Controller
 
     public function edit($id){
 
-        $book = Books::find($id);
+        $book = Book::find($id);
         return view('edit', ['book' => $book]);
     }
 
     public function update(Request $request, $id){
 
-        $book = Books::find($id); //SELECT * FROM courses WHERE id=6 LIMIT 1
+        $book = Book::find($id); //SELECT * FROM courses WHERE id=6 LIMIT 1
         
         $book -> title = $request -> title;
         $book -> author_name = $request -> author_name;
@@ -53,7 +53,7 @@ class BookController extends Controller
     } //Add a default value of null
 
     public function destroy($id){
-        $book = Books::find($id);
+        $book = Book::find($id);
         $book -> delete();
         return redirect() ->route('books.index');
     }
