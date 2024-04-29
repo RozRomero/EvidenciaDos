@@ -1,3 +1,74 @@
+# Library Management System
+
+This is a basic library management system developed using Laravel's Eloquent ORM, focusing on CRUD operations for books.
+
+## Setup Instructions
+
+1. Clone the repository:
+git clone <https://github.com/RozRomero/EvidenciaDos>
+
+csharp
+Copy code
+2. Navigate into the project directory:
+cd library-management-system
+
+arduino
+Copy code
+3. Install dependencies using Composer:
+composer install
+
+markdown
+Copy code
+4. Copy the `.env.example` file and rename it to `.env`:
+cp .env.example .env
+
+markdown
+Copy code
+5. Generate an application key:
+php artisan key:generate
+
+javascript
+Copy code
+6. Set up your database in the `.env` file:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+
+sql
+Copy code
+7. Run database migrations to create tables:
+php artisan migrate
+
+markdown
+Copy code
+8. Serve the application:
+php artisan serve
+
+vbnet
+Copy code
+9. Access the application in your web browser at `http://localhost:8000`.
+
+## Features
+
+- CRUD operations for managing books (Create, Read, Update, Delete)
+- Basic layout with Blade templates
+- Form for adding/editing book details
+- List view to display all books with options to manipulate records
+
+## Testing CRUD Operations
+
+1. **Create**: Navigate to the home page and click on the "Add Book" button. Fill in the required fields in the form and submit.
+2. **Read**: On the home page, you'll see a list of all books. Click on any book title to view its details.
+3. **Update**: On the book details page, click on the "Edit" button. Update the book details in the form and submit.
+4. **Delete**: On the book details page, click on the "Delete" button to remove the book from the database.
+
+## Instructor Testing
+
+As the instructor, you can test each CRUD operation by following the steps outlined above. Additionally, you can access the underlying database to verify changes made by CRUD operations.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
